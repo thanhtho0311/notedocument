@@ -51,6 +51,43 @@
 <h4> 6. GIAO DIỆN CONFIG </h4>
   
   <p> "compmgmt.msc" </p> <br>
-  
+
+<div style="border:1px solid">
+	
+<h4> 7.CHECK PORTS ĐÃ OPEN OR ESTABLISH TRÊN WINDOWS </h4>
+
+<p> 7.1 Check trạng thái port: </p> </br>
+	
+<p> Điền nầy là cần thiết nếu bạn muốn biết máy tính bạn đang chạy những chương trình gì, và những chương trình nào đang âm thầm chạy ngầm cùng hệ thống.
+Chỉ 1 vài dòng lệnh thôi chúng ta đã biết được điều đó, điều nầy giúp ích cho bạn rất nhiều trong công tác bảo mật hệ thống cũng như kiểm tra đụng độ port. </p> <br>
+	
+<p> – Đầu tiên chúng ta mở CMD lên và gõ lệnh : netstat -an |find /i “listening”
+Lúc nầy hệ thống sẽ xuất ra các port đang trong trạng thái Listening ( có nghĩa là port đang ở trang thái lắng nghe, và đã được thiết lập trong hệ thống). </p> <br>
+
+<p> – Tương tự như vậy ta check các port đã establishing trên windows với câu lệnh netstat -an |find /i “established”.
+Hệ thống sẽ show cho ta thấy các port nào đã establish ( có nghĩa là các port đã thiết lập kết nối và đang được sử dụng) </p>
+</div>
+
+<div style="border:1px solid">
+<p> 7.2 Hiện thị danh sách các process tương ứng với mỗi kết nối (PID): </p> </br>
+	
+<p> – Dùng lệnh netstat -ao |find /i “listening”  hoặc netstat –no để show các PID tương ứng với các connection sau đó mở taskmanager để kiểm tra PID đó tương ứng với application nào. </p> </br>
+
+<p> Cấu trúc lệnh NETSTAT trên Windows: </p> </br>
+<p> Netstat [-a] [-b] [-e] [-f] [-n] [-o] [-p proto] [-r] [-s] [-t] [-v] [interval] </p> </br>
+
+<p> Option: [-a] hiển thị tất cả các kết nối giữa máy tính local với các máy tính remote trong hay bên ngoài. </p> </br>
+
+<p> Lệnh: netstat –an </p> </br>
+<p> Option: [-b] hiển thị các tiến trình thực thi kết nối </p> </br>
+<p> Option: [-e] hiển thị thống kê card mạng ethernet </p> </br>
+<p> Option [-r] hiển thị thông tin bảng định tuyến </p> </br>
+<p> Option [-f] hiển thị thông tin đầy đủ tên Domain FQDN </p> </br>
+<p> Option [-n] hiển thị địa chỉ ip remote host </p> </br>
+<p> Option [-o] hiển thị thông tin ID tiến trình của 1 kết nối. lệnh netstat –on </p> </br>
+<p> Option [-p] hiển thị các giao thức kết nối </p> </br>
+<p> Cú pháp: netstat –p [udp|tcp|tcpv6|udpv6|icmp|ip] </p> </br>
+<p> Option [-s] hiển thị thống kê giao thức </p> </br>
+</div>	
   </body>
 </html>
