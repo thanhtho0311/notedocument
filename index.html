@@ -11,6 +11,8 @@
 <hr />
 	
 <h4> 1. KIỂM TRA HỆ ĐIỀU HÀNH </h4> <br>
+
+<p> systeminfo , msinfo32 </p> </br>
   
   <p> để kiểm tra phiên bản hệ điều hành và hệ điều hành đã được active chưa thì chúng ta có thể dùng các lệnh sau </p> <br>
   
@@ -91,5 +93,77 @@ Hệ thống sẽ show cho ta thấy các port nào đã establish ( có nghĩa 
 <p> Option [-p] hiển thị các giao thức kết nối </p> </br>
 <p> Cú pháp: netstat –p [udp|tcp|tcpv6|udpv6|icmp|ip] </p> </br>
 <p> Option [-s] hiển thị thống kê giao thức </p> </br>	
-  </body>
+
+<h4> 8. FIREWALL </h>
+<p> netsh advfirewall set privateprofile state off </p> </br>
+
+<p> netsh advfirewall set currentprofile state on </p> </br>
+
+<p> ncetsh advfirewall set publicprofile state off </p> </br>
+
+<p> netsh advfirewall set  currentprofile state off </p> </br>
+
+<p> netsh advfirewall show currentprofile </p> </br>
+
+<p> netsh advfirewall firewall show rule name=all </p> </br>
+
+<p> netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" protocol=icmpv4:8,any dir=in action=allow </p> </br>
+
+<p> netsh advfirewall firewall add rule name="ICMP Allow incoming V4 echo request" protocol=icmpv4:8,any dir=in action=block </p> </br>
+
+<p> Net stop wuauserv (tắt dịch vụ windows update) </p> </br>
+
+<p> Net start wuauserv (bật dịch vụ windows update) </p> </br>
+
+<h4> 9. CHẠY MỘT CHƯƠNG TRÌNH BẰNG LỆNH CMD </h4
+
+<p> C:\Users\PC\Downloads>chuong_trinh.exe /passive </p>
+
+<h4> 10. MỘT SỐ CỔNG DỊCH VỤ CƠ BẢN </h4>
+
+<p> TCP/80  -->   http </p> </br>
+<p> TCP/443 --> https </p> </br>
+<p> TCP/22 --> ssh </p> </br>
+<p> TCP/23 --> Telnet </p> </br>
+<p> TCP/445 --> Share file (CIFS) </p> </br>
+<p> TCP/88 --> Kerberos </p> </br>
+<p> TCP/389 --> ldap </p> </br>
+<p> UDP/53 --> Client query dns </p> </br>
+<p> TCP/53 --> dns zone transfer file </p> </br>
+<p> TCP/25 - SMTP </p> </br>
+<p> UPD/161 - SNMP </p> </br>
+<p> UDP/123 - NTP </p> </br>
+<p> ICMP - không có port </p> </br>
+
+<h4> 11. SHOW PASS WIFI </h4>
+
+<p> netsh wlan show profile </p> </br>
+
+<p> netsh wlan show profile "coffee_wifi" key=clear </p> </br>
+
+<h4> 12.CÁC BƯỚC KIỂM TRA MÁY TÍNH WINDOWS XEM CÓ BỊ VIRUS KHÔNG  </h4>
+
+<p> 1. gõ lệnh "regedit" nếu lệnh không chạy, 99% máy bị virus (lưu ý: phiên bản windows Home không có lệnh này) </p> </br>
+
+<p> 2. Kiểm tra windows firewall (on/off), tường lửa đang bị tắt, khả năng cao là bị nhiễm virus </p> </br>
+
+<p> 3. Lệnh "netstat -ano" không chạy được lệnh, 99% máy bị virus </p> </br>
+
+<p> 4. Kiểm tra task scheduler, xem có chương trình nào lạ được cho phép chạy cùng khi máy tính khi khởi động máy lên </p> </br>
+
+<p> 5. Kết nối internet và mở ứng dụng tcpview để kiểm tra các kết nối. </p> </br>
+
+<p> 6. Sử dụng Antivirus MalwareByte phiên bản miễn phí (được 15 ngày) để diệt virus (vì nó nhẹ, quét nhanh). </p> </br>
+
+<p> 7. dùng lệnh "sfc /scannow" để fix lại registry. </p> </br>
+
+<p> 8. Sử dụng WiresShark để bắt các gói tin có trong hệ thống mạng LAN, xác định máy tính phát gói tin broadcats. </p> </br>
+
+<p> 9. Search các mã lỗi "Enternalblue", "bluekeep" trên hệ điều hành đang chạy (có thể dùng Nmap để xác định nhanh). </p> </br>
+
+<p> 10. Dùng lệnh "netshare" để kiểm tra các thư mục đã chia sẻ (có được phân quyền rõ ràng hay không). </p> </br>
+
+<p> Đặc biệt: Lỗ hỏng bảo mật từ con người là nguy hiểm nhất... "Quản trị viên chịu thua cái lỗi này" </p> </br>
+
+	</body>
 </html>
