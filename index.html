@@ -22,18 +22,19 @@
   
   <p> "slmgr.vbs -dlv" </p> <br>
 	  
-
-	
+ <hr />
 <h4> 2. KIỂM TRA THÔNG SỐ CPU </h4> <br>
   
   <p> "wmic cpu get caption, deviceid, name, numberofcores, maxclockspeed, status" </p> <br>
 
+<hr />
 <h4> 3. KIỂM TRA THÔNG SỐ RAM </h4> <br>
   
   <p> "wmic  MEMORYCHIP get BankLabel, DeviceLocator, MemoryType, Capacity, Speed, serialnumber, manufacturer" </p> <br>
   
   <p> "wmic  memphysical get MaxCapacity, MemoryDevices" </p> <br>
-
+	
+<hr />
 <h4> 4. KIỂM TRA THÔNG SỐ Ỗ CỨNG </h4> <br>
   
   <p> "wmic diskdrive get model, serialnumber" </p>
@@ -44,15 +45,17 @@
   
   <p> "diskmgmt.msc" </p> <br>
 
+	<hr />
 <h4> 5. KIỂM TRA ĐỊA CHỈ IP </h4>
   
   <p> "ipconfig /all" </p> <br>
 
+<hr/>
 <h4> 6. GIAO DIỆN CONFIG </h4>
   
   <p> "compmgmt.msc" </p> <br>
 
-<div style="border:1px solid">
+<hr />
 	
 <h4> 7.CHECK PORTS ĐÃ OPEN OR ESTABLISH TRÊN WINDOWS </h4>
 
@@ -66,9 +69,9 @@ Lúc nầy hệ thống sẽ xuất ra các port đang trong trạng thái Liste
 
 <p> – Tương tự như vậy ta check các port đã establishing trên windows với câu lệnh netstat -an |find /i “established”.
 Hệ thống sẽ show cho ta thấy các port nào đã establish ( có nghĩa là các port đã thiết lập kết nối và đang được sử dụng) </p>
-</div> </br>
 
-<div style="border:1px solid">
+<hr />	
+	
 <p> 7.2 Hiện thị danh sách các process tương ứng với mỗi kết nối (PID): </p> </br>
 	
 <p> – Dùng lệnh netstat -ao |find /i “listening”  hoặc netstat –no để show các PID tương ứng với các connection sau đó mở taskmanager để kiểm tra PID đó tương ứng với application nào. </p> </br>
